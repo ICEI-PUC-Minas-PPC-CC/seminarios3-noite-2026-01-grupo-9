@@ -10,9 +10,14 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| **Nome do Grupo** | *(preencher)* |
-| **Integrantes** | *(listar todos)* |
-| **E-mail de contato** | *(preencher)* |
+| **Nome do Grupo** | Grupo9 |
+| **Integrantes** | Henrique Santos
+|                   Carlos Henrique
+                    Daniel Souza
+                    haoran 
+                    Felipe Miguel
+                    Matheus Albertine
+| **E-mail de contato** | henriquesouzalveshen@gmail.com |
 | **Comunidade parceira** | *(preencher)* |
 
 ---
