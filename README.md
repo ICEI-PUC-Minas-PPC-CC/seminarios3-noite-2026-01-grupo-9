@@ -14,13 +14,13 @@
 | **Integrantes** | Henrique Santos, Carlos Henrique, Daniel Souza, Haoran, Felipe Miguel, Matheus Albertine
 |                   
 | **E-mail de contato** | henriquesouzalveshen@gmail.com |
-| **Comunidade parceira** | *(preencher)* |
+| **Comunidade parceira** | Tarso |
 
 ---
 
 ## 🎯 Software a Ser Desenvolvido
 
-(Descreva brevemente a aplicação que será desenvolvida e seu objetivo.)
+(Iremos desenvolver um software para surdos com led em sinais de emergencia sabe identificar a hora de sair, correr ou manter-se calmo,usando leds e feito no pyton)
 
 ---
 
