@@ -56,11 +56,11 @@ Nosso trabalho ira propricionar , os itens mencionados abaixo:
 
 | Componente | Tecnologia |
 | ----------- | ----------- |
-| Front-end | |
-| Back-end (se houver) | |
-| Banco de dados (se houver) | |
+| Front-end | | Javascript
+| Back-end (se houver) | | Python
+| Banco de dados (se houver) | | SQL
 | Hospedagem | |
-| Outras ferramentas : Ferramenta Python.
+| Outras ferramentas : 
 
 ## 7. Protótipo / Wireframes
 
