@@ -13,7 +13,7 @@ Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na
 
 | Campo | Informação |
 | ------- | ----------- |
-| Perfil dos usuários | |
+| Perfil dos usuários | Deficiente Auditivo |
 | Faixa etária | |
 | Necessidades de acessibilidade | |
 | Nível de familiaridade com tecnologia | |
