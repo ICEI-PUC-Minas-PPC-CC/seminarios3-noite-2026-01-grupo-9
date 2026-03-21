@@ -20,7 +20,7 @@
 
 ## 🎯 Software a Ser Desenvolvido
 
-Iremos desenvolver um software para pessoas portadora de deficiencia auditiva. Será com intuito elaborar um Transcrição em Tempo Real, criando um App que transforma a voz de quem esta falando em texto na tela.
+Iremos desenvolver um software para pessoas portadora de deficiencia auditiva. Será com intuito elaborar uma Transcrição em Tempo Real, criando um App que transforma a voz de quem esta falando para a língua de sinais usando personagens 3D.
 
 ---
 
