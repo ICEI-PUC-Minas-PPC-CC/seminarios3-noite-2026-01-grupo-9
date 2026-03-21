@@ -20,7 +20,7 @@
 
 ## 🎯 Software a Ser Desenvolvido
 
-(Iremos desenvolver um software para surdos com led em sinais de emergencia sabe identificar a hora de sair, correr ou manter-se calmo,usando leds e feito no pyton)
+(Iremos desenvolver um software para surdos com led em sinais de emergencia sabe identificar a hora de sair, correr ou manter-se calmo,usando leds e feito no python)
 
 ---
 
