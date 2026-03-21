@@ -1,15 +1,15 @@
 # 02 — Documento de Requisitos do Software
 
-> **Grupo:** *(preencher)*  
-> **Aplicação:** *(preencher)*  
-> **Comunidade:** *(preencher)*
+> **Grupo:** *Grupo 9.*  
+> **Aplicação:** *Transcrição de fala em tempo real para lingua de sinais (Libras) e em texto.*  
+> **Comunidade:** *Deficientes auditivos.*
 
 ---
 
 ## 1. Visão Geral
 
 (Descreva em poucas frases o que é a aplicação, para quem ela é destinada e qual problema ela resolve.)
-
+Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na tela instataneamnete, destinada a deficientes auditivos, podendo facilitar a cominucação entre leigos em libras e deficientes auditivos.
 ## 2. Público-Alvo
 
 | Campo | Informação |
