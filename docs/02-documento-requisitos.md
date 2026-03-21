@@ -44,9 +44,9 @@ Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na
 
 Nosso trabalho ira propricionar , os itens mencionados abaixo:
 
- 1-Interface predominantemente visual (ícones, cores, imagens)
+1-Interface predominantemente visual (ícones, cores, imagens)
 2- Textos curtos e objetivos
- 3-Botões grandes e identificáveis
+3-Botões grandes e identificáveis
 4- Contraste adequado de cores.
 
 ## 6. Tecnologias Escolhidas
