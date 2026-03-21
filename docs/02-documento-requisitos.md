@@ -15,7 +15,7 @@ Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na
 | ------- | ----------- |
 | Perfil dos usuários | Deficiente Auditivo |
 | Faixa etária | |
-| Necessidades de acessibilidade | |
+| Necessidades de acessibilidade | Ter um celular ou computador |
 | Nível de familiaridade com tecnologia | |
 
 > **Lembrete (Tarso de Coimbra):** Os usuários podem ter deficiência auditiva/surdez. A interface deve ser **visual, intuitiva e de baixa complexidade**. Priorize elementos visuais (imagens, ícones, cores) sobre texto extenso.
