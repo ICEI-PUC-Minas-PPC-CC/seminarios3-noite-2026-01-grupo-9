@@ -1,6 +1,6 @@
 # 02 — Documento de Requisitos do Software
 
-> **Grupo:** *Grupo 9.*  
+> **Grupo:** *Grupo 9 *   
 > **Aplicação:** *Transcrição de fala em tempo real para lingua de sinais (Libras) e em texto.*  
 > **Comunidade:** *Deficientes auditivos.*
 
@@ -42,13 +42,12 @@ Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na
 
 ## 5. Requisitos de Acessibilidade
 
-- [ ] Interface predominantemente visual (ícones, cores, imagens)
-- [ ] Textos curtos e objetivos
-- [ ] Botões grandes e identificáveis
-- [ ] Contraste adequado de cores
-- [ ] Compatível com Libras (se aplicável: vídeos, sinais, glossário)
-- [ ] Sem dependência de áudio para funcionalidades essenciais
-- [ ] Outro: *(especificar)*
+Nosso trabalho ira propricionar , os itens mencionados abaixo:
+
+ 1-Interface predominantemente visual (ícones, cores, imagens)
+2- Textos curtos e objetivos
+ 3-Botões grandes e identificáveis
+4- Contraste adequado de cores.
 
 ## 6. Tecnologias Escolhidas
 
@@ -58,7 +57,7 @@ Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na
 | Back-end (se houver) | |
 | Banco de dados (se houver) | |
 | Hospedagem | |
-| Outras ferramentas | |
+| Outras ferramentas : Ferramenta Payton.
 
 ## 7. Protótipo / Wireframes
 
