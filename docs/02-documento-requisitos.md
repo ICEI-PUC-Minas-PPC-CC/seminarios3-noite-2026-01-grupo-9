@@ -60,7 +60,7 @@ Nosso trabalho ira propricionar , os itens mencionados abaixo:
 | Back-end (se houver) | |
 | Banco de dados (se houver) | |
 | Hospedagem | |
-| Outras ferramentas : Ferramenta Payton.
+| Outras ferramentas : Ferramenta Python.
 
 ## 7. Protótipo / Wireframes
 
