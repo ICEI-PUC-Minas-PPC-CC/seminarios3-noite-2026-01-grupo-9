@@ -20,7 +20,7 @@
 
 ## 🎯 Software a Ser Desenvolvido
 
-(Iremos desenvolver um software para surdos com led em sinais de emergencia sabe identificar a hora de sair, correr ou manter-se calmo,usando leds e feito no python)
+Iremos desenvolver um software para pessoas portadora de deficiencia auditiva. Será com intuito elaborar um Transcrição em Tempo Real, criando um App que transforma a voz de quem esta falando em texto na tela.
 
 ---
 
