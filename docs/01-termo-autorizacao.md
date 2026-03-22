@@ -16,7 +16,7 @@
 | Campo | Informação |
 | ------- | ----------- |
 | Nome do Grupo | |
-| Integrantes | |
+| Integrantes |Carlos, Haoran, Daniel, Felipe, Henrique, Mateus |
 | E-mail de contato | |
 | Telefone de contato | |
 
@@ -24,11 +24,11 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| Nome da instituição | |
-| Endereço | |
+| Nome da instituição | Centro Municipal de Atendimento Educacional Especializado Dr.Tarso de Coimbra|
+| Endereço | Rua Mario Xandó de Oliveira, 2 Bairro São Geraldo |
 | Nome do responsável | |
 | Cargo/Função | |
-| Telefone ou e-mail da instituição | |
+| Telefone ou e-mail da instituição |3536972126|
 
 > **Nota:** O professor responsável pela disciplina poderá entrar em contato com a comunidade/instituição acima indicada para fins de validação das informações, acompanhamento do desenvolvimento, ajustes no planejamento e alinhamentos necessários à entrega do software.
 
@@ -36,12 +36,12 @@
 
 | Campo | Informação |
 | ------- | ----------- |
-| Título/Tema da aplicação | |
-| Público-alvo | |
-| Nº estimado de usuários | |
-| Faixa etária do público | |
-| Tecnologias previstas | |
-| Hospedagem prevista | |
+| Título/Tema da aplicação | Gesto |
+| Público-alvo | Deficientes auditivos e ouvintes que buscam acessebilidade |
+| Nº estimado de usuários |  |
+| Faixa etária do público | Todas as idades |
+| Tecnologias previstas | IA de Reconhecimento de Voz (Speech-to-Text), Processamento de Linguagem Natural (NLP), Animação 3D (para avatar de LIBRAS) e Framework Mobile (Flutter ou React Native)  |
+| Hospedagem prevista | Serviços de nuvem como AWS (Amazon Web Services), Google Cloud ou Firebase |
 
 ### Breve descrição da aplicação e sua finalidade
 
