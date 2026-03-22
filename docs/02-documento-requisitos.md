@@ -8,7 +8,7 @@
 
 ## 1. Visão Geral
 
-Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na tela instataneamnete, destinada a deficientes auditivos, podendo facilitar a comunicação entre leigos em libras e deficientes auditivos.
+Um software que traduz audio para lingua de sinais (Libras) e e gera em texto na tela instantaneamente, destinada a deficientes auditivos, podendo facilitar a comunicação entre leigos em libras e deficientes auditivos.
 ## 2. Público-Alvo
 
 | Campo | Informação |
