@@ -56,9 +56,9 @@ Nosso trabalho ira propricionar , os itens mencionados abaixo:
 
 | Componente | Tecnologia |
 | ----------- | ----------- |
-| Front-end |Javascript | Javascript
-| Back-end (se houver) | | Python
-| Banco de dados (se houver) | | SQL
+| Front-end |  Javascript |
+| Back-end (se houver) |  Python | 
+| Banco de dados (se houver) | SQL |
 | Hospedagem | |
 | Outras ferramentas : 
 
