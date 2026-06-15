@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plataforma de acessibilidade que traduz voz para texto e Língua Brasileira de Sinais (Libras) em tempo real." />
+  <title>Tradutor de Voz para Libras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <span class="badge">Acessibilidade</span>
+      <h1 class="title">Tradutor de Voz <br /><em>para Libras</em></h1>
+      <p class="subtitle">Fale, veja o texto e acompanhe a tradução em Língua Brasileira de Sinais.</p>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Seção de gravação -->
+    <section class="card record-card" id="section-gravacao">
+      <p class="card-label">01 — Captação de voz</p>
+
+      <button id="btn-gravar" class="btn-record" aria-label="Iniciar gravação de voz">
+        <span class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+            <path d="M12 1a4 4 0 0 1 4 4v7a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6.364 9.636a.75.75 0 0 1 .75.75A7.002 7.002 0 0 1 12.75 18.93V21h2.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5h2.5v-2.07A7.002 7.002 0 0 1 4.886 11.386a.75.75 0 0 1 1.5 0 5.5 5.5 0 0 0 11 0 .75.75 0 0 1 .75-.75h.228z"/>
+          </svg>
+        </span>
+        <span class="btn-label">Iniciar Gravação</span>
+      </button>
+
+      <div class="status-row">
+        <span id="status-dot" class="dot dot--idle"></span>
+        <span id="status-text" class="status-text">Aguardando...</span>
+      </div>
+    </section>
+
+    <!-- Seção de texto reconhecido -->
+    <section class="card text-card" id="section-texto">
+      <p class="card-label">02 — Texto reconhecido</p>
+      <div
+        id="texto-reconhecido"
+        class="text-display"
+        role="region"
+        aria-live="polite"
+        aria-label="Texto reconhecido pelo microfone"
+      >
+        <span class="placeholder">O texto reconhecido pela voz aparecerá aqui...</span>
+      </div>
+      <button id="btn-limpar" class="btn-secondary" aria-label="Limpar texto reconhecido">Limpar texto</button>
+    </section>
+
+    <!-- Seção VLibras — widget oficial integrado -->
+    <section class="card vlibras-card" id="section-vlibras">
+      <p class="card-label">03 — Tradução em Libras</p>
+      <p class="vlibras-hint-card">
+        O widget VLibras está ativo nesta página. Clique no ícone de mãos
+        que aparece no canto da tela para abrir o tradutor de Libras.
+      </p>
+    </section>
+
+    <!-- Seção de histórico de transcrições -->
+    <section class="card historico-card" id="section-historico">
+      <div class="historico-header">
+        <p class="card-label">04 — Histórico desta sessão</p>
+        <span id="historico-count" class="historico-count">0 transcrições</span>
+      </div>
+
+      <div id="historico-lista" class="historico-lista" aria-label="Histórico de transcrições">
+        <p class="placeholder">Nenhuma transcrição ainda. Grave algo para começar!</p>
+      </div>
+
+      <div class="historico-actions">
+        <button id="btn-carregar-mais" class="btn-secondary" style="display:none;" aria-label="Carregar mais transcrições">
+          Carregar mais
+        </button>
+      </div>
+    </section>
+
+    <!-- Seção de estatísticas -->
+    <section class="card stats-card" id="section-stats">
+      <p class="card-label">05 — Estatísticas de uso</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span id="stat-total" class="stat-value">—</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-item">
+          <span id="stat-hoje" class="stat-value">—</span>
+          <span class="stat-label">Hoje</span>
+        </div>
+        <div class="stat-item">
+          <span id="stat-sessoes" class="stat-value">—</span>
+          <span class="stat-label">Sessões</span>
+        </div>
+        <div class="stat-item">
+          <span id="stat-confianca" class="stat-value">—</span>
+          <span class="stat-label">Confiança média</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Projeto de acessibilidade · Libras é reconhecida por lei como a língua da comunidade surda do Brasil.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- ============================================================
+       VLibras Widget — Integração oficial (gov.br)
+       Docs: https://vlibras.gov.br/doc/widget/installation/webpageintegration.html
+       ============================================================ -->
+
+  <!-- Elementos obrigatórios do widget -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Script oficial hospedado pelo governo -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Inicialização do widget apontando para o servidor oficial -->
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>
