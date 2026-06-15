@@ -1,0 +1,17 @@
+# ========================================
+# render.yaml — Deploy no Render.com
+# Ambiente: homologação
+# ========================================
+
+services:
+  - type: web
+    name: tradutor-libras
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./transcricoes.db
+      - key: DEBUG
+        value: "false"
+    healthCheckPath: /api/health

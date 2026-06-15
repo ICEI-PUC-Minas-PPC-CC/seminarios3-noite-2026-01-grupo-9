@@ -1,0 +1,34 @@
+# ========================================
+# docker-compose.yml — Desenvolvimento Local
+# Ambiente: localhost apenas
+# ========================================
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./transcricoes.db
+      - DEBUG=true
+    volumes:
+      # Hot-reload do código em desenvolvimento
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    restart: unless-stopped
+
+  # ── PostgreSQL (descomente para usar em homologação) ──
+  # db:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: usuario_mock
+  #     POSTGRES_PASSWORD: senha_mock_123
+  #     POSTGRES_DB: libras_dev
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+# volumes:
+#   pgdata:
