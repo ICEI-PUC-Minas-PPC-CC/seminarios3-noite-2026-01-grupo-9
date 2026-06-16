@@ -9,11 +9,11 @@
 
 | Integrante | Responsabilidades principais |
 | ----------- | ------------------------------ |
-| | |
-| | |
-| | |
-| | |
-
+|Carlos Hnerique |Parte de Back-End,|
+|Henrique |Primeira parte do codigo do Back-End |
+| Felipe Fernandes|Uma parte do Back-End e Front |
+|Daniel de Souza | Segunda parte do codigo Front-End|
+|Mateus Albertini|Criação do Servidor e Banco de Dados|
 ## 2. Cronograma de Desenvolvimento
 
 | Semana | Período (dd/MM à dd/MM) | Atividade planejada | Responsável | Status |
@@ -51,15 +51,17 @@
 
 ### Ambiente de desenvolvimento
 
-(Descreva o setup: editor de código, controle de versão, branches, etc.)
+(Vscode,Antygravity,)
 
 ### Estratégia de testes
 
 (Como o grupo vai testar a aplicação antes da entrega?)
+Os teste foram realizado nos aparelhos dispositivos de cada integrante do grupo, via Link gerado pelo servidor. Após clicar no repositorio o aplicativo abre,e começa a funcionabilidade do app.
 
 ### Estratégia de deploy
 
 (Onde e como a aplicação será hospedada?)
+Foi hospedada via render "Sistema de Hospedagem"
 
 ## 5. Riscos e Mitigações
 
