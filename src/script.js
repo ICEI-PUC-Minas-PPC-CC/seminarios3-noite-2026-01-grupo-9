@@ -1,15 +1,3 @@
-// =============================================================
-// script.js — Tradutor de Voz para Libras
-// Utiliza a Web Speech API nativa do navegador (Chromium).
-// Integra com o backend FastAPI para persistir transcrições.
-// =============================================================
-
-// -------------------------------------------------------------
-// 0. CONFIGURAÇÃO DA API
-// -------------------------------------------------------------
-
-// Em desenvolvimento local, o backend roda na mesma origem (servido pelo FastAPI).
-// Caso o frontend seja servido separadamente, ajuste esta URL.
 const API_BASE = window.location.origin;
 
 // Identificador único desta sessão do navegador
@@ -19,9 +7,6 @@ const SESSION_ID = crypto.randomUUID();
 let paginaAtual = 1;
 const POR_PAGINA = 10;
 
-// -------------------------------------------------------------
-// 1. REFERÊNCIAS AOS ELEMENTOS DO DOM
-// -------------------------------------------------------------
 const btnGravar = document.getElementById('btn-gravar');
 const statusDot  = document.getElementById('status-dot');
 const statusText = document.getElementById('status-text');
@@ -48,10 +33,6 @@ let gravando = false;
 // Timestamp de início da gravação (para calcular duração)
 let inicioGravacao = null;
 
-// -------------------------------------------------------------
-// 2. CONFIGURAÇÃO DA WEB SPEECH API
-// -------------------------------------------------------------
-
 // A API é prefixada em alguns navegadores; aqui cobrimos Chrome e Edge
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -77,23 +58,12 @@ reconhecedor.continuous = false;
 // proporcionando feedback visual em tempo real.
 reconhecedor.interimResults = true;
 
-// -------------------------------------------------------------
-// 3. FUNÇÕES AUXILIARES
-// -------------------------------------------------------------
 
-/**
- * Atualiza o indicador de status (ponto colorido + texto).
- * @param {'idle'|'active'|'success'|'error'} state - Classe CSS do ponto.
- * @param {string} msg - Mensagem exibida ao lado do ponto.
- */
 function setStatus(state, msg) {
   statusDot.className = `dot dot--${state}`;
   statusText.textContent = msg;
 }
 
-/**
- * Coloca a interface no estado "gravando".
- */
 function entrarModoGravacao() {
   gravando = true;
   inicioGravacao = Date.now();
@@ -101,24 +71,14 @@ function entrarModoGravacao() {
   setStatus('active', 'Ouvindo...');
 }
 
-/**
- * Coloca a interface de volta no estado "parado".
- */
+
 function sairModoGravacao() {
   gravando = false;
   btnGravar.classList.remove('recording');
   setStatus('idle', 'Aguardando...');
 }
 
-// -------------------------------------------------------------
-// 4. INTEGRAÇÃO COM A API (BACKEND)
-// -------------------------------------------------------------
 
-/**
- * Envia o texto final reconhecido para o backend.
- * @param {string} texto - Texto transcrito.
- * @param {number} confianca - Nível de confiança (0 a 1).
- */
 async function salvarTranscricao(texto, confianca) {
   if (!texto || texto.trim().length === 0) return;
 
@@ -155,10 +115,6 @@ async function salvarTranscricao(texto, confianca) {
   }
 }
 
-/**
- * Carrega o histórico de transcrições do backend.
- * @param {boolean} reset - Se true, limpa o histórico atual e volta à página 1.
- */
 async function carregarHistorico(reset = false) {
   if (reset) {
     paginaAtual = 1;
@@ -196,10 +152,6 @@ async function carregarHistorico(reset = false) {
   }
 }
 
-/**
- * Adiciona um item ao DOM do histórico.
- * @param {Object} item - Objeto da transcrição (vindo da API).
- */
 function adicionarAoHistorico(item) {
   // Remove placeholder se existir
   const placeholder = historicoLista.querySelector('.placeholder');
@@ -253,25 +205,12 @@ async function carregarEstatisticas() {
   }
 }
 
-/**
- * Escapa HTML para prevenir XSS ao exibir texto do usuário.
- * @param {string} text - Texto bruto.
- * @returns {string} Texto seguro para innerHTML.
- */
 function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
 }
 
-// -------------------------------------------------------------
-// 5. EVENTOS DO RECONHECEDOR DE VOZ
-// -------------------------------------------------------------
-
-/**
- * Disparado continuamente enquanto o reconhecedor detecta fala.
- * 'results' contém tanto resultados provisórios (interim) quanto finais.
- */
 reconhecedor.onresult = (event) => {
   let textoInterim = '';  // Texto ainda sendo processado
   let textoFinal   = '';  // Texto já confirmado pelo reconhecedor
@@ -305,10 +244,6 @@ reconhecedor.onresult = (event) => {
   }
 };
 
-/**
- * Disparado quando o reconhecedor encerra normalmente
- * (após silêncio detectado ou quando continuous = false).
- */
 reconhecedor.onend = () => {
   sairModoGravacao();
 
@@ -318,10 +253,6 @@ reconhecedor.onend = () => {
   }
 };
 
-/**
- * Disparado quando ocorre algum erro durante o reconhecimento.
- * Códigos comuns: 'not-allowed', 'no-speech', 'network', 'aborted'.
- */
 reconhecedor.onerror = (event) => {
   console.error('Erro no reconhecimento de voz:', event.error);
 
@@ -339,9 +270,6 @@ reconhecedor.onerror = (event) => {
   setStatus('idle', msg);
 };
 
-// -------------------------------------------------------------
-// 6. CONTROLE DO BOTÃO "INICIAR / PARAR GRAVAÇÃO"
-// -------------------------------------------------------------
 
 btnGravar.addEventListener('click', () => {
   if (gravando) {
@@ -355,31 +283,21 @@ btnGravar.addEventListener('click', () => {
   }
 });
 
-// -------------------------------------------------------------
-// 7. BOTÃO "LIMPAR"
-// -------------------------------------------------------------
-
 btnLimpar.addEventListener('click', () => {
   // Restaura o placeholder e reseta o status
   textoEl.innerHTML = PLACEHOLDER;
   setStatus('idle', 'Aguardando...');
 });
 
-// -------------------------------------------------------------
-// 8. BOTÃO "CARREGAR MAIS" (HISTÓRICO)
-// -------------------------------------------------------------
-
 btnCarregarMais.addEventListener('click', () => {
   paginaAtual++;
   carregarHistorico(false);
 });
 
-// -------------------------------------------------------------
-// 9. INICIALIZAÇÃO
-// -------------------------------------------------------------
+// Carregar dados ao abrir a pagina
+document.addEventListener( ' DOMContentLoaded',() => {
+ carregaHistorico(true);
+ carregaEstatistica();
 
-// Carregar dados ao abrir a página
-document.addEventListener('DOMContentLoaded', () => {
-  carregarHistorico(true);
-  carregarEstatisticas();
+});
 });
