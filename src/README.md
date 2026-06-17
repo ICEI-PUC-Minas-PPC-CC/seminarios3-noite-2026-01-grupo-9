@@ -17,15 +17,7 @@
 *(Descreva os passos para rodar a aplicação localmente.)*
 
 ```bash
-# Exemplo:
-# 1. Clone o repositório
-git clone <url-do-repositorio>
-
-# 2. Instale as dependências
-npm install
-
-# 3. Execute a aplicação
-npm start
+Acessar o link do site em : https://tradutor-libras-yi1h.onrender.com/
 ```
 
 ## Estrutura do Código
