@@ -9,9 +9,9 @@
 | Campo | Informação |
 | ------- | ----------- |
 | Nome do Grupo |Tradutor libras |
-| Integrantes participantes | Mateus ALbertini, Daniel, Felipe Fernandes, Carlos, Henrique  |
+| Integrantes participantes | Mateus Albertini, Daniel, Felipe Fernandes, Carlos, Henrique  |
 | Disciplina | Seminários III |
-| Comunidade atendida | |
+| Comunidade atendida | Tarso |
 | Software desenvolvido | Tradutor de voz para libras|
 | URL da aplicação (https://tradutor-libras-yi1h.onrender.com/) | |
 
