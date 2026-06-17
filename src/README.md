@@ -8,9 +8,9 @@
 
 | Campo | Informação |
 |-------|-----------|
-| Nome da aplicação | *(preencher)* |
-| Tecnologias utilizadas | *(preencher)* |
-| URL em produção | *(preencher, se hospedado)* |
+| Site de libras | *(é um site que transcreve em temnpo real e gera texto e sinais de libras)* |
+| Tecnologias utilizadas | *(Python, JavaScript e Render)* |
+| URL em produção | *(https://tradutor-libras-yi1h.onrender.com/)* |
 
 ## Como Executar Localmente
 
