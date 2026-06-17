@@ -1,9 +1,9 @@
 const API_BASE = window.location.origin;
 
-// Identificador único desta sessão do navegador
+
 const SESSION_ID = crypto.randomUUID();
 
-// Controle de paginação do histórico
+
 let paginaAtual = 1;
 const POR_PAGINA = 10;
 
@@ -13,49 +13,47 @@ const statusText = document.getElementById('status-text');
 const textoEl    = document.getElementById('texto-reconhecido');
 const btnLimpar  = document.getElementById('btn-limpar');
 
-// Histórico
+
 const historicoLista   = document.getElementById('historico-lista');
 const historicoCount   = document.getElementById('historico-count');
 const btnCarregarMais  = document.getElementById('btn-carregar-mais');
 
-// Estatísticas
+
 const statTotal     = document.getElementById('stat-total');
 const statHoje      = document.getElementById('stat-hoje');
 const statSessoes   = document.getElementById('stat-sessoes');
 const statConfianca = document.getElementById('stat-confianca');
 
-// Texto exibido quando não há nenhum conteúdo reconhecido
+
 const PLACEHOLDER = '<span class="placeholder">O texto reconhecido pela voz aparecerá aqui...</span>';
 
-// Controla se o reconhecimento está ativo no momento
+
 let gravando = false;
 
-// Timestamp de início da gravação (para calcular duração)
+
 let inicioGravacao = null;
 
-// A API é prefixada em alguns navegadores; aqui cobrimos Chrome e Edge
+
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
-// Verifica suporte antes de prosseguir
+
 if (!SpeechRecognition) {
   setStatus('error', 'Navegador sem suporte à API de voz');
   btnGravar.disabled = true;
   console.error('Web Speech API não suportada neste navegador. Use Chrome ou Edge.');
 }
 
-// Cria a instância do reconhecedor
+
 const reconhecedor = new SpeechRecognition();
 
-// Idioma definido como Português do Brasil
+
 reconhecedor.lang = 'pt-BR';
 
-// continuous: false → para automaticamente após uma fala detectada.
-// Mantemos false para um fluxo simples; pode ser true para captura contínua.
+
 reconhecedor.continuous = false;
 
-// interimResults: true → exibe resultados parciais enquanto o usuário ainda fala,
-// proporcionando feedback visual em tempo real.
+
 reconhecedor.interimResults = true;
 
 
@@ -107,7 +105,7 @@ async function salvarTranscricao(texto, confianca) {
     const data = await response.json();
     console.log('Transcrição salva:', data);
 
-    // Atualizar histórico e estatísticas
+   
     adicionarAoHistorico(data);
     carregarEstatisticas();
   } catch (err) {
@@ -139,13 +137,13 @@ async function carregarHistorico(reset = false) {
     historicoCount.textContent = `${data.total} transcrição${data.total !== 1 ? 'ões' : ''}`;
 
     data.items.forEach(item => {
-      // Evitar duplicatas
+      
       if (!document.getElementById(`hist-${item.id}`)) {
         adicionarAoHistorico(item);
       }
     });
 
-    // Mostrar/esconder botão de "carregar mais"
+    
     btnCarregarMais.style.display = paginaAtual < data.total_paginas ? '' : 'none';
   } catch (err) {
     console.error('Erro ao carregar histórico:', err);
@@ -153,7 +151,7 @@ async function carregarHistorico(reset = false) {
 }
 
 function adicionarAoHistorico(item) {
-  // Remove placeholder se existir
+ 
   const placeholder = historicoLista.querySelector('.placeholder');
   if (placeholder) placeholder.remove();
 
